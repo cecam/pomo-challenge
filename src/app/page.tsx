@@ -1,5 +1,5 @@
-import Image from "next/image";
+import LoginPage from "@/features/auth/infraestructure/ui/LoginPage";
 
 export default function Home() {
-  return <h1>holi</h1>;
+  return <LoginPage />;
 }
