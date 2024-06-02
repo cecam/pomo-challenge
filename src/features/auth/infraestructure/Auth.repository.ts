@@ -10,3 +10,14 @@ export const signUp = async (email: string, password: string) => {
         console.error(error);
     }
 };
+
+export const signIn = async (email: string, password: string) => {
+    try {
+        await client.auth.signInWithPassword({
+            email,
+            password,
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}

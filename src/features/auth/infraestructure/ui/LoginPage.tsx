@@ -1,38 +1,34 @@
-"use client";
-import { User } from "../../domain/User";
 import { useForm } from "@/hooks/useForm";
 import { useAuth } from "./useAuth";
+import { Input } from "@/components/atoms/Input/Input";
 
 const LoginPage = () => {
-  const { values, handleInputChange } = useForm<User>({
+  const { values, handleInputChange } = useForm({
     initialValues: {
       email: "",
       password: "",
     },
   });
-  const { handleSignUpSubmit } = useAuth(values);
+  const { handleSignInSubmit } = useAuth(values);
 
   return (
-    <div>
-      <h1>Bienvenido a la carrera!</h1>
-      <form onSubmit={handleSignUpSubmit}>
-        <input
-          type="text"
-          placeholder="Email"
-          name="email"
-          value={values.email}
-          onChange={handleInputChange}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={values.password}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Comienza a concentrarte</button>
-      </form>
-    </div>
+    <form onSubmit={handleSignInSubmit}>
+      <Input
+        label="Email"
+        type="email"
+        value={values.email}
+        name="email"
+        onChange={handleInputChange}
+      />
+      <Input
+        label="Password"
+        type="password"
+        value={values.password}
+        name="password"
+        onChange={handleInputChange}
+      />
+      <button type="submit">Login</button>
+    </form>
   );
 };
 

@@ -1,5 +1,5 @@
-import LoginPage from "@/features/auth/infraestructure/ui/LoginPage";
+import RegisterPage from "@/features/auth/infraestructure/ui/RegisterPage";
 
 export default function Home() {
-  return <LoginPage />;
+  return <RegisterPage />;
 }
